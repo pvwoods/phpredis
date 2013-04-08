@@ -1,6 +1,7 @@
 #include "php.h"
 #include "php_ini.h"
 #include <ext/standard/php_smart_str.h>
+#include "crc16.h"
 
 #ifndef REDIS_COMMON_H
 #define REDIS_COMMON_H
@@ -186,5 +187,9 @@ typedef struct {
 
 void
 free_reply_callbacks(zval *z_this, RedisSock *redis_sock);
+
+// cluster
+#define REDIS_CLUSTER_HASH_SLOTS 16384
+
 
 #endif
